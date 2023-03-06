@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Sidebar Components */
+@layer components {
+    .x-sidebar {
+        @apply z-20 flex-shrink-0 hidden w-64 overflow-y-auto bg-gray-800 md:block;
+    }
+    .x-sidebar-container {
+        @apply py-4 text-gray-100;
+    }
+    .x-sidebar-brand-link {
+        @apply ml-6 text-lg font-bold transition duration-200 ease-in-out text-gray-50 hover:text-purple-500 focus:text-purple-500/80;
+    }
+    .x-sidebar-menu {
+        @apply mt-6;
+    }
+    .x-sidebar-menu-name {
+        @apply block text-xs font-semibold tracking-wider text-gray-400 uppercase;
+    }
+    /*
+     * Original Class:  .x-sidebar-menu-item
+     * Updated Class:   .x-sidebar-menu .menu-item
+     * @version 0.1.2
+     */
+    .x-sidebar-menu-item {
+        @apply relative px-6 py-3;
+    }
+    /*
+     * Original Class:  .x-sidebar-menu-item-link
+     * Updated Class:   .x-sidebar-menu .menu-item .link | Active Class:    .link-active
+     * @version 0.1.2
+     */
+    .x-sidebar-menu-item-link {
+        @apply inline-flex items-center w-full text-sm font-semibold text-gray-100 transition-colors duration-150 hover:text-purple-500;
+    }
+    .x-sidebar-menu-item-link-active {
+        @apply inline-flex items-center w-full text-sm font-semibold text-purple-500 transition-colors duration-150 hover:text-purple-100;
+    }
+}
