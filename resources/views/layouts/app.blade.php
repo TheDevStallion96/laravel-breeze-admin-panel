@@ -19,22 +19,15 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+    <div class="flex h-screen bg-gray-50">
+        <x-sidebar brandName="{{ config('app.name', 'Breezemin') }}" />
+        <div class="flex flex-col flex-1 w-full">
 
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
+            <x-navigation.header />
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+            <main class="h-full overflow-y-auto">{{ $slot }}</main>
+
+        </div>
     </div>
     @livewireScripts
 </body>
